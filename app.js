@@ -1,10 +1,10 @@
+const containerEl = document.querySelector(".container");
 const monthEl = document.querySelector("#month");
 const dateEl = document.querySelector("#date");
 const dayEl = document.querySelector("#day");
 const hoursEl = document.querySelector("#hours");
 const minutesEl = document.querySelector("#minutes");
 const secondsEl = document.querySelector("#seconds");
-const ampmEl = document.querySelector("#ampm");
 
 const getDate = () => {
 	let f = new Date();
@@ -46,35 +46,53 @@ const getDate = () => {
 			monthEl.textContent = "Dec";
 			break;
 	}
-    dateEl.textContent = f.getDate();
-	// dayEl.textContent = f.getDay();
-    switch (f.getDay()) {
-        case 0:
-            dayEl.textContent = "Sunday"
-            break;
-        case 1:
-            dayEl.textContent = "Monday"
-            break;
-        case 2:
-            dayEl.textContent = "Tuesday"
-            break;
-        case 3:
-            dayEl.textContent = "Wednesday"
-            break;
-        case 4:
-            dayEl.textContent = "Thursday"
-            break;
-        case 5:
-            dayEl.textContent = "Friday"
-            break;
-        case 6:
-            dayEl.textContent = "Saturday"
-            break;
-    }
+	dateEl.textContent = f.getDate();
+	switch (f.getDay()) {
+		case 0:
+			dayEl.textContent = "Sunday";
+			break;
+		case 1:
+			dayEl.textContent = "Monday";
+			break;
+		case 2:
+			dayEl.textContent = "Tuesday";
+			break;
+		case 3:
+			dayEl.textContent = "Wednesday";
+			break;
+		case 4:
+			dayEl.textContent = "Thursday";
+			break;
+		case 5:
+			dayEl.textContent = "Friday";
+			break;
+		case 6:
+			dayEl.textContent = "Saturday";
+			break;
+	}
 	hoursEl.textContent = String(f.getHours()).padStart(2, "0");
-	f.getHours() > 11
-		? (ampmEl.textContent = "PM")
-		: (ampmEl.textContent = "AM");
+	let hours = f.getHours();
+	if (hours >= 6 && hours <= 10) {
+		containerEl.style.background =
+			"url('https://images.pexels.com/photos/2871478/pexels-photo-2871478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+		containerEl.style.backgroundRepeat = "no-repeat";
+		containerEl.style.backgroundSize = "100%";
+	} else if (hours >= 11 && hours <= 18) {
+		containerEl.style.background =
+			"url('https://images.pexels.com/photos/8332569/pexels-photo-8332569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+		containerEl.style.backgroundRepeat = "no-repeat";
+		containerEl.style.backgroundSize = "100%";
+	} else if (hours >= 19 && hours <= 23) {
+		containerEl.style.background =
+			"url('https://images.pexels.com/photos/13279962/pexels-photo-13279962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+		containerEl.style.backgroundRepeat = "no-repeat";
+		containerEl.style.backgroundSize = "100%";
+	} else {
+		containerEl.style.background =
+			"url('https://images.pexels.com/photos/12869811/pexels-photo-12869811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+		containerEl.style.backgroundRepeat = "no-repeat";
+		containerEl.style.backgroundSize = "100%";
+	}
 	minutesEl.textContent = String(f.getMinutes()).padStart(2, "0");
 	secondsEl.textContent = String(f.getSeconds()).padStart(2, "0");
 

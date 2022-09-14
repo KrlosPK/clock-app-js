@@ -2,6 +2,7 @@
     font-family: pendejo;
     src: url('fonts/alarm\ clock.ttf');
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
     box-sizing: border-box;
@@ -11,9 +12,6 @@
 }
 .container {
 	align-items: center;
-	background: url("https://images.pexels.com/photos/1004665/pexels-photo-1004665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
-		no-repeat;
-	background-size: 100%;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -35,7 +33,7 @@
     font-family: pendejo;
 }
 .date > * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .time,
 .date {
@@ -47,7 +45,4 @@
 }
 .day {
 	margin-left: 0.35em;
-}
-.ampm {
-	margin-left: 0.2em;
 }
