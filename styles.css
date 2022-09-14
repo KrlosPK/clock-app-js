@@ -1,11 +1,11 @@
 @font-face {
-    font-family: pendejo;
-    src: url('fonts/alarm\ clock.ttf');
+	font-family: pendejo;
+	src: url("fonts/alarm\ clock.ttf");
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 	font-family: system-ui;
 	margin: 0;
 	padding: 0;
@@ -29,11 +29,18 @@
 	width: 100%;
 	z-index: 1;
 }
+.time {
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 50px;
+	padding: 1rem 2.5rem;
+}
 .time > * {
-    font-family: pendejo;
+	color: #16d02f;
+	font-family: pendejo;
+	font-size: 120px;
 }
 .date > * {
-    font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 .time,
 .date {
